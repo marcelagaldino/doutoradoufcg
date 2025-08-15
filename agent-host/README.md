@@ -19,7 +19,7 @@ Antes de executar a solução, garanta a seguinte versão:
 
 ## Executar Agent-Host
 
-- Edite o arquivo de configuração agent-host/conf.yaml, informando o UUID da VM de gerenciamento, bem como seu endereço IP e a porta utilizada para comunicação com a SG_API.
+- Edite o arquivo de configuração agent-host/conf.yaml, com as seguintes informações da VM de gerenciamento: UUID, endereço IP e a porta utilizada para comunicação com a SG_API.
 
 - O Agent-Host deve ser executado em cada máquina hospedeira que compõe o sistema.
 
