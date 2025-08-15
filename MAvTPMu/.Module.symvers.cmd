@@ -1,0 +1,1 @@
+cmd_/home/management/doutorado_ufcg_backup_v1_experimento/kernel-modules-vmg/Module.symvers := sed 's/\.ko$$/\.o/' /home/management/doutorado_ufcg_backup_v1_experimento/kernel-modules-vmg/modules.order | scripts/mod/modpost -m -a  -o /home/management/doutorado_ufcg_backup_v1_experimento/kernel-modules-vmg/Module.symvers -e -i Module.symvers   -T -

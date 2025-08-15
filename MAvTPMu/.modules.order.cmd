@@ -1,0 +1,1 @@
+cmd_/home/management/doutorado_ufcg_backup_v1_experimento/kernel-modules-vmg/modules.order := {   echo /home/management/doutorado_ufcg_backup_v1_experimento/kernel-modules-vmg/VMAAS_VMG.ko; :; } | awk '!x[$$0]++' - > /home/management/doutorado_ufcg_backup_v1_experimento/kernel-modules-vmg/modules.order
