@@ -1,0 +1,2 @@
+/home/vmaas/doutorado_ufcg/event-capture-module/vmaas.o
+

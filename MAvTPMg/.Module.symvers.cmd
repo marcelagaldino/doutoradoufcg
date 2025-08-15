@@ -1,0 +1,1 @@
+cmd_/home/vmaas/doutorado_ufcg/event-capture-module/Module.symvers := sed 's/\.ko$$/\.o/' /home/vmaas/doutorado_ufcg/event-capture-module/modules.order | scripts/mod/modpost -m -a  -o /home/vmaas/doutorado_ufcg/event-capture-module/Module.symvers -e -i Module.symvers   -T -

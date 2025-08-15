@@ -1,0 +1,1 @@
+cmd_/home/vmaas/doutorado_ufcg/event-capture-module/vmaas.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/vmaas/doutorado_ufcg/event-capture-module/vmaas.ko /home/vmaas/doutorado_ufcg/event-capture-module/vmaas.o /home/vmaas/doutorado_ufcg/event-capture-module/vmaas.mod.o;  true

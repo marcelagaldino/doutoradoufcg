@@ -1,0 +1,1 @@
+cmd_/home/vmaas/doutorado_ufcg/event-capture-module/modules.order := {   echo /home/vmaas/doutorado_ufcg/event-capture-module/vmaas.ko; :; } | awk '!x[$$0]++' - > /home/vmaas/doutorado_ufcg/event-capture-module/modules.order
