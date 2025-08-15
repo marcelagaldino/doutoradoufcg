@@ -113,7 +113,8 @@ func SendMessageNetlinkExperimento(msg string) {
     conn.Send(m)
 
     // URL do host2
-    url := "http://192.168.0.7:8087/notify"
+//    url := "http://192.168.0.7:8087/notify"
+    url := "http://localhost:8087/notify"
 
     // Estrutura do corpo da requisição em JSON
     requestBody := map[string]string{
@@ -133,7 +134,6 @@ func SendMessageNetlinkExperimento(msg string) {
         return
     }
 
-
     // Definir o tipo de conteúdo como application/json
     req.Header.Set("Content-Type", "application/json")
 
@@ -146,17 +146,12 @@ func SendMessageNetlinkExperimento(msg string) {
     }
     defer resp.Body.Close()
 
-
-
     // Verificar a resposta
     if resp.StatusCode == http.StatusOK {
         fmt.Println("Notificação enviada com sucesso!")
     } else {
         fmt.Printf("Erro ao enviar a notificação: Status %d\n", resp.StatusCode)
     }
-
-
-
 }
 
 
@@ -379,7 +374,6 @@ func server(wg *sync.WaitGroup) {
 			formatedInfo := fmt.Sprintf("PERMANENT-STATE/management/%s", uuid, data[0])
 			fmt.Printf("%s\n", formatedInfo)
 			SendMessageNetlink(formatedInfo)
-			//SendMessageNetlinkExperimento(formatedInfo)
 		}
 
 	}
@@ -477,18 +471,15 @@ func volatile(wg *sync.WaitGroup) {
 			formatedInfo := fmt.Sprintf("ADD/management/%s/%s", Number_PCR, data[0])
 			fmt.Printf("%s\n", formatedInfo)
 
-			if(Number_PCR == "15"){
-                                SendMessageNetlinkExperimento(formatedInfo)
+			//SendMessageNetlink(formatedInfo)
+
+			if(Number_PCR == "11"){
+				SendMessageNetlinkExperimento(formatedInfo)
                         } else{
 
-                                SendMessageNetlink(formatedInfo)
+				SendMessageNetlink(formatedInfo)
 
-                        }
-
-
-			//SendMessageNetlink(formatedInfo)
-//			SendMessageNetlinkExperimento(formatedInfo)
-
+			}
 		}
 	}
 }
