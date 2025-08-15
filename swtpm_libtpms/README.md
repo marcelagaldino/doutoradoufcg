@@ -1,4 +1,4 @@
-#Instruções para instalação do SWTPM e libtpms
+# Instruções para instalação do SWTPM e libtpms
 
 .
 
