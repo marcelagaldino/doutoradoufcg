@@ -1,0 +1,7 @@
+address: "192.168.122.36"
+#port: 8443
+port: 8080
+uuid: "e5199494-74fe-4d65-b68e-b4ae41237d9e"
+ca_cert: "/home/vmaas/ca-cert.pem"      # Caminho para o certificado da CA
+client_cert: "/home/vmaas/client-cert.pem"  # Caminho para o certificado do cliente
+client_key: "/home/vmaas/client-key.pem"    # Caminho para a chave privada do cliente
