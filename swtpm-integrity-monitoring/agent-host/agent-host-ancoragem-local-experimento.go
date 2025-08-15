@@ -112,8 +112,6 @@ func SendMessageNetlinkExperimento(msg string) {
 
     conn.Send(m)
 
-    // URL do host2
-//    url := "http://192.168.0.7:8087/notify"
     url := "http://localhost:8087/notify"
 
     // Estrutura do corpo da requisição em JSON
@@ -173,55 +171,6 @@ func SendMessageNetlink(msg string) {
 	conn.Send(m)
 }
 
-/*func SendMessageNetlink(msg string) {
-	const rtnetlink = 2
-	const rtmGroupLink = 21
-	conn, _ := netlink.Dial(rtnetlink, nil)
-	defer conn.Close()
-
-	_ = conn.JoinGroup(rtmGroupLink)
-
-	m := netlink.Message{
-		Header: netlink.Header{},
-		Data:   []byte(msg),
-	}
-
-	conn.Send(m)
-
-//adicionado para experimentação
-
- // URL do host2
-    url := "http://150.165.75.50:8080/notify"
-
-    // Corpo da requisição - por exemplo, uma mensagem simples ou dados estruturados em JSON
-    jsonData := []byte(fmt.Sprintf(`{"message":  %s"}`, msg))
-    // Criar a requisição POST
-    req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonData))
-    if err != nil {
-        fmt.Println("Erro ao criar a requisição:", err)
-        return
-    }
-
-    // Definir o tipo de conteúdo como application/json
-    req.Header.Set("Content-Type", "application/json")
-
-    // Enviar a requisição
-    client := &http.Client{}
-    resp, err := client.Do(req)
-    if err != nil {
-        fmt.Println("Erro ao enviar a notificação:", err)
-        return
-    }
-    defer resp.Body.Close()
-
-    // Verificar a resposta
-    if resp.StatusCode == http.StatusOK {
-        fmt.Println("Notificação enviada com sucesso!")
-    } else {
-        fmt.Printf("Erro ao enviar a notificação: Status %d\n", resp.StatusCode)
-    }
-
-}*/
 
 func eventCapture(wg *sync.WaitGroup) error {
 	// Listen to rtnetlink for modification of network interfaces
@@ -571,8 +520,6 @@ func getMeasurement(vm_agent net.Listener) (string, error) {
 		log.Printf("error: Error while accepting connection: %v", err)
 		return state_hash, err
 	}
-	//host_agent_IP := socketHost.GetIP(host_conn)
-	//log.Printf("Agent has connected via IP: %v", host_agent_IP)
 
 	state_hash, err = vtpmDataHost.Receive(host_conn)
 	if err != nil {
