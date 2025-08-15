@@ -1,6 +1,6 @@
 # Instruções para o carregamento do módulo de kernel **MAvTPMg**
 
-Nos Hosts que compõem o sistema executar:
+Em todos os Hosts, executar:
 
 ```bash
 sudo apt-get install build-essential linux-headers-$(uname -r)
